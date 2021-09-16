@@ -71,21 +71,12 @@
     width: 142px;
   }
   .optionally-data {
-    font-size: 19px;
-    line-height: 22px;
-  }
-  .optionally-name {
-    font-size: 15px;
-    line-height: 18px;
-  }
-}
-
-@media (max-width:377px) {
-  .optionally-data {
     font-size: 18px;
     line-height: 21px;
   }
   .optionally-item {
     width: 137px;
+    font-size: 15px;
+    line-height: 18px;
   }
 }

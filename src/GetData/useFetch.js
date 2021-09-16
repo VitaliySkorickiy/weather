@@ -15,13 +15,12 @@ export const useFetch = () => {
     const fetchData = async () => {
 
       const request = await fetch(`${API_PATH}${newCity}&units=metric&lang=ru&appid=${KEY_API}`);
-      console.log(request);
 
       if (request.ok) {
         const res = await request.json();
         setResponse(res)
         setError(null)
-      } else if (request.cod == 429) {
+      } else if (request.cod === '429') {
         setError("Ваша учетная запись временно заблокирована в связи с превышением ограничений на запросы вашего типа подписки. Пожалуйста, выберите подходящую подписку http://openweathermap.org/price")
       } else {
         setError('Error: данный сервис временно недоступен, смените временные ключи')
@@ -30,7 +29,6 @@ export const useFetch = () => {
     fetchData();
 
   }, [newCity])
-
   return { response, error, setNewCity, newCity }
 }
 

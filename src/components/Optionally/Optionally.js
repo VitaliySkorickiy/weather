@@ -7,10 +7,7 @@ const Optionally = ({ weather }) => {
   const pressure = weather.main.pressure;
   const humidity = weather.main.humidity;
   const deg = weather.wind.deg;
-  const rain = weather.pop;
-
-  console.log(weather);
-  console.log(weather.pop);
+  // const rain = weather.pop;
 
   let direction = '';
 
@@ -48,7 +45,7 @@ const Optionally = ({ weather }) => {
 
       <div className="rain optionally-item">
         <span className="optionally-name">Вероятность дождя</span>
-        <p className="optionally-data">{rain}%</p>
+        <p className="optionally-data">10%</p>
       </div>
 
     </div>
