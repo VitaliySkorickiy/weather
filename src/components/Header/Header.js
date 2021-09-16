@@ -7,7 +7,11 @@ const Header = ({ newCity, setNewCity, error, far, setFar, cityName }) => {
 
   const [searchPanel, setSearchPanel] = useState(true)
 
-  const hidden = searchPanel ? '' : 'hidden';
+  let hidden = '';
+
+  if (window.innerWidth < 830) {
+    hidden = searchPanel ? '' : 'hidden';
+  }
 
   const celActiveDegree = far ? '' : 'active-degree-cel';
   const farActiveDegree = far ? 'active-degree-far' : '';
