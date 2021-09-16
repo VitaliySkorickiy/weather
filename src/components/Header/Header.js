@@ -7,6 +7,8 @@ const Header = ({ newCity, setNewCity, error, far, setFar, cityName }) => {
 
   const [searchPanel, setSearchPanel] = useState(true)
 
+  const hidden = searchPanel ? '' : 'hidden';
+
   const celActiveDegree = far ? '' : 'active-degree-cel';
   const farActiveDegree = far ? 'active-degree-far' : '';
 
@@ -32,7 +34,7 @@ const Header = ({ newCity, setNewCity, error, far, setFar, cityName }) => {
         }
       </div>
 
-      <div className="header-degree">
+      <div className={`header-degree ${hidden}`}>
         <span>&deg;</span>
         <button
           className={`cel ${celActiveDegree}`}

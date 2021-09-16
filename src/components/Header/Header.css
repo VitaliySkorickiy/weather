@@ -49,9 +49,13 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+.hidden {
+  display: none;
+}
+
 @media (max-width:870px) {
   .header-degree {
-    display: none;
+    /* display: none; */
   }
 }
 
