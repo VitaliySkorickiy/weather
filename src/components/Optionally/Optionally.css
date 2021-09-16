@@ -67,16 +67,24 @@
 }
 
 @media (max-width:390px) {
-  .optionally-item {
-    width: 142px;
-  }
   .optionally-data {
     font-size: 18px;
-    line-height: 21px;
+    line-height: 22px;
   }
   .optionally-item {
     width: 137px;
     font-size: 15px;
     line-height: 18px;
+    margin-right: 15px;
+  }
+  .optionally-name {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width:341px) {
+  .optionally-item {
+    margin-bottom: 10px;
   }
 }
