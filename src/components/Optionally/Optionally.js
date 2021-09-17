@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../../Context';
+
 import './Optionally.css';
 
-const Optionally = ({ weather }) => {
+const Optionally = () => {
+
+  const { weather } = useContext(Context);
 
   const windSpeed = Math.round(weather.wind.speed);
   const pressure = weather.main.pressure;

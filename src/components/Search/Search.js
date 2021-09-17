@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Path from '../../img/Path.png';
+import Context from '../../Context';
 
 import './Search.css';
 
-const Search = ({ cityName, setSearchPanel, searchPanel }) => {
+const Search = ({ setSearchPanel, searchPanel }) => {
+
+  const { weather } = useContext(Context);
+
   return (
     <div className="search">
-      <div className="city">{cityName}</div>
+      <div className="city">{weather.name}</div>
       <div className="city-btn">
         <button
           className="change-city"

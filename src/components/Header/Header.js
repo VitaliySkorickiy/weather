@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Search from '../Search/Search';
 import Form from '../Form/Form';
+import Context from '../../Context';
+
 import './Header.css';
 
-const Header = ({ newCity, setNewCity, error, far, setFar, cityName }) => {
-
+const Header = () => {
+  const { far, setFar } = useContext(Context);
   const [searchPanel, setSearchPanel] = useState(true)
 
   let hidden = '';
@@ -23,17 +25,13 @@ const Header = ({ newCity, setNewCity, error, far, setFar, cityName }) => {
         {searchPanel
           ?
           <Search
-            cityName={cityName}
             setSearchPanel={setSearchPanel}
             searchPanel={searchPanel}
           />
           :
           <Form
-            setNewCity={setNewCity}
-            newCity={newCity}
             setSearchPanel={setSearchPanel}
             searchPanel={searchPanel}
-            error={error}
           />
         }
       </div>

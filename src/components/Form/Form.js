@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../../Context';
+
 import './Form.css';
 
-const Form = ({ newCity, setNewCity, setSearchPanel, searchPanel, error }) => {
+const Form = ({ searchPanel, setSearchPanel }) => {
+
+  const { error, newCity, setNewCity } = useContext(Context);
 
   return (
     <div className="form">

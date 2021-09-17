@@ -13,6 +13,7 @@
 @media (max-width:900px) {
   .container {
     padding-bottom: 65px;
+    border: none;
   }
 }
 

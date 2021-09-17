@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../../Context';
 import './Info.css';
 
-const Info = ({ weather, far }) => {
+const Info = () => {
+
+  const { weather, far } = useContext(Context);
 
   const img = `https://openweathermap.org/img/wn/${weather.weather[0]['icon']}@2x.png`;
   const temp = Math.round(weather.main.temp);

@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
+import { useFetch } from './GetData/useFetch';
 import Header from './components/Header/Header';
 import Info from './components/Info/Info';
 import Optionally from './components/Optionally/Optionally';
-
-import { useFetch } from './GetData/useFetch';
-
+import Context from './Context'
 
 import './App.css';
 
 function App() {
-
   const getData = useFetch();
   const weather = getData.response;
   const error = getData.error;
@@ -18,28 +16,29 @@ function App() {
 
   const [far, setFar] = useState(false);
 
+  const value = {
+    weather,
+    error,
+    newCity,
+    far,
+    setNewCity,
+    setFar
+  }
+
   return (
-    <div className="container">
-      {weather ?
-        <>
-          <Header
-            newCity={newCity}
-            setNewCity={setNewCity}
-            cityName={weather.name}
-            setFar={setFar}
-            far={far}
-            error={error}
-          />
-          <Info
-            weather={{ ...weather }}
-            far={far}
-          />
-          <Optionally weather={{ ...weather }} />
-        </> : error ?
-          <h1>{error}</h1> :
-          <h2>Loading...</h2>
-      }
-    </div>
+    <Context.Provider value={value}>
+      <div className="container">
+        {weather ?
+          <>
+            <Header />
+            <Info />
+            <Optionally />
+          </> : error ?
+            <h1>{error}</h1> :
+            <h2>Loading...</h2>
+        }
+      </div>
+    </Context.Provider>
   );
 }
 export default App;
