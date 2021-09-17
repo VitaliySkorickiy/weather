@@ -7,6 +7,7 @@
   height: 100vh;
   padding: 75px 75px 122px 99px;
   color: #fff;
+  border: 1px solid #979797;
 }
 
 @media (max-width:900px) {
@@ -29,6 +30,6 @@
 
 @media (max-width:375px) {
   .container {
-    padding: 19px 19px 0px 19px;
+    padding: 19px 19px 6px 19px;
   }
 }

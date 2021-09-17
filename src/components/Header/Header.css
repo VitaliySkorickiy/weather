@@ -53,12 +53,6 @@
   display: none;
 }
 
-@media (max-width:870px) {
-  .header-degree {
-    /* display: none; */
-  }
-}
-
 @media (max-width:375px) {
   .header-city {
     font-size: 30px;
