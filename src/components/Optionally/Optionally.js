@@ -5,24 +5,23 @@ import './Optionally.css';
 
 const Optionally = () => {
 
-  const { weather } = useContext(Context);
-
-  const windSpeed = Math.round(weather.wind.speed);
-  const pressure = weather.main.pressure;
-  const humidity = weather.main.humidity;
-  const deg = weather.wind.deg;
-  // const rain = weather.pop;
+  const { response } = useContext(Context);
+  const windSpeed = Math.round(response.list.[0].wind.speed);
+  const pressure = response.list.[0].main.pressure;
+  const humidity = response.list.[0].main.humidity;
+  const deg = response.list.[0].wind.deg;
+  const rain = response.list.[0].pop;
 
   let direction = '';
 
   if (315 <= deg || deg < 45) {
-    direction = 'северный'
+    direction = 'южный  '
   } else if (45 <= deg || deg < 135) {
-    direction = 'восточный'
+    direction = 'западный  '
   } else if (135 <= deg || deg < 225) {
-    direction = 'южный'
+    direction = 'северный'
   } else if (225 <= deg || deg < 315) {
-    direction = 'западный'
+    direction = 'восточный'
   }
 
   return (
@@ -49,7 +48,7 @@ const Optionally = () => {
 
       <div className="rain optionally-item">
         <span className="optionally-name">Вероятность дождя</span>
-        <p className="optionally-data">10%</p>
+        <p className="optionally-data">{rain * 100}%</p>
       </div>
 
     </div>

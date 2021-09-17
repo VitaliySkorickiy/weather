@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const API_PATH = "https://api.openweathermap.org/data/2.5/weather?q=";
-const API_PATH1 = "https://pro.openweathermap.org/data/2.5/forecast/hourly?q=";
-
+const API_PATH = "https://api.openweathermap.org/data/2.5/forecast?q=";
 const KEY_API = "27153e51947708ddc23e81d8ff0a840a";
 
 export const useFetch = () => {
@@ -13,7 +11,6 @@ export const useFetch = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-
       const request = await fetch(`${API_PATH}${newCity}&units=metric&lang=ru&appid=${KEY_API}`);
 
       if (request.ok) {
@@ -29,6 +26,7 @@ export const useFetch = () => {
     fetchData();
 
   }, [newCity])
+
   return { response, error, setNewCity, newCity }
 }
 

@@ -6,11 +6,11 @@ import './Search.css';
 
 const Search = ({ setSearchPanel, searchPanel }) => {
 
-  const { weather } = useContext(Context);
+  const { response } = useContext(Context);
 
   return (
     <div className="search">
-      <div className="city">{weather.name}</div>
+      <div className="city">{response.city.name}</div>
       <div className="city-btn">
         <button
           className="change-city"

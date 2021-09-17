@@ -4,11 +4,11 @@ import './Info.css';
 
 const Info = () => {
 
-  const { weather, far } = useContext(Context);
-
-  const img = `https://openweathermap.org/img/wn/${weather.weather[0]['icon']}@2x.png`;
-  const temp = Math.round(weather.main.temp);
-  const description = weather.weather[0].description;
+  const { response, far } = useContext(Context);
+  const weatherList = response.list.[0];
+  const img = `https://openweathermap.org/img/wn/${weatherList.weather[0]['icon']}@2x.png`;
+  const temp = Math.round(weatherList.main.temp);
+  const description = weatherList.weather[0].description;
 
   return (
     <div className="info">

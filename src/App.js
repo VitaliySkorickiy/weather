@@ -9,15 +9,11 @@ import './App.css';
 
 function App() {
   const getData = useFetch();
-  const weather = getData.response;
-  const error = getData.error;
-  const newCity = getData.newCity;
-  const setNewCity = getData.setNewCity;
-
+  const { response, error, newCity, setNewCity } = getData;
   const [far, setFar] = useState(false);
 
   const value = {
-    weather,
+    response,
     error,
     newCity,
     far,
@@ -28,7 +24,7 @@ function App() {
   return (
     <Context.Provider value={value}>
       <div className="container">
-        {weather ?
+        {response ?
           <>
             <Header />
             <Info />
